@@ -29,6 +29,11 @@ public class BinaryTest
         // Write a unit test to check if the Binary class fails for some string of text
         // Example: "Hello World"
         String helloWorld = "";
+        try {
+            Binary binary = new Binary(helloWorld);
+            return false;
+        } catch(InvalidBinaryNumberException e) {
+        }
 
         // TODO
         // Write a unit test to check if the Binary class fails for some string of integers
