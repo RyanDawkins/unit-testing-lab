@@ -39,16 +39,26 @@ public class BinaryTest
         // Write a unit test to check if the Binary class fails for some string of integers
         // Example: "123456789"
         String numbers = "";
+        try {
+            Binary binary = new Binary(numbers);
+            return false;
+        } catch(InvalidBinaryNumberException e) {
+        }
 
         // TODO
         // Write a unit test to check if the Binary class fails for some empty string
         // Example: ""
         String emptyString = "";
+        try {
+            Binary binary = new Binary(numbers);
+            return false;
+        } catch(InvalidBinaryNumberException e) {
+        }
 
         // TODO
         // If the test reached this point we have no more test cases?
         // What should we return?
-        return false;
+        return true;
     }
 
 }
