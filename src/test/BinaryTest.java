@@ -11,10 +11,27 @@ public class BinaryTest
 
     public static void main(String[] args)
     {
+
+        boolean passed = true;
+
         if(badInputShouldExplode()) {
             System.out.println("Bad Input test cases ran successfully.");
         } else {
             System.out.println("Bad Input test cases failed.");
+            passed = false;
+        }
+
+        if(testingBase10()) {
+            System.out.println("Base 10 test cases ran successfully.");
+        } else {
+            System.out.println("Base 10 test cases failed.");
+            passed = false;
+        }
+
+        if(passed) {
+            System.out.println("All tests passed successfully.");
+        } else {
+            System.out.println("One or more tests failed.");
         }
     }
 
@@ -58,6 +75,31 @@ public class BinaryTest
         // TODO
         // If the test reached this point we have no more test cases?
         // What should we return?
+        return true;
+    }
+
+    public static boolean testingBase10()
+    {
+        // Here we are going to test base 10 numbers, and see if the Binary class can represent them correctly.
+        // Our integers are not expected to be able to hold negative values. So as a placeholder for t1_expected
+        // I will place a negative value when I want you to tell me what the expected value should be.
+
+        // Case 1: "0" base 2 converts to 0 base 10
+        String t1_input = "0";
+        int t1_expected = 0;
+        Binary t1_binary = new Binary(t1_input);
+        if(t1_expected != t1_binary.getBase10()) {
+            return false;
+        }
+
+        // Case 2: "1" base 2 converts to 1 base 10
+        String t2_input = "1";
+        int t2_expected = -1;
+        Binary t2_binary = new Binary(t1_input);
+        if(t2_expected != t2_binary.getBase10()) {
+            return false;
+        }
+
         return true;
     }
 
