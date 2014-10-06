@@ -5,7 +5,6 @@ import com.ryanddawkins.unit_testing_lab.InvalidBinaryNumberException;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.Ignore;
 
 /**
  * Created by dawkins on 10/2/14.
@@ -22,6 +21,10 @@ public class BinaryTest
         System.out.println("Base 10 test cases ran successfully.");
     }
 
+    /**
+     * This is a test to check if errors are thrown
+     * Also it is an example for you.
+     */
     @Test
     public static void badInputShouldExplode()
     {
@@ -61,6 +64,9 @@ public class BinaryTest
         }
     }
 
+    /**
+     * This is an example to test base 10 conversions
+     */
     @Test
     public static void testingBase10()
     {
@@ -79,6 +85,41 @@ public class BinaryTest
         int t2_expected = 1;
         Binary t2_binary = new Binary(t2_input);
         Assert.assertEquals(t2_expected, t2_binary.getBase10());
+    }
+
+    /**
+     * This method is to test the addition method of the Binary class
+     */
+    @Test
+    public static void shouldAdd()
+    {
+        // We need to test the addition that our binary representations can do.
+        // Here you can use either the Binary.add(Binary) or the Binary.add(String)
+        // probably should test Binary.add(String) because that will test both.
+
+        // TODO Test Case 1: "0" + "0"
+        // expected "0" or 0
+        Binary a1 = null, b1 = null;
+        int e1 = 0;
+        Assert.assertEquals(a1.add(b1).getBase10(), e1);
+
+        // TODO Test Case 2: "0" + "1"
+        // expected "1" or 1
+
+        // TODO Test Case 3: "10" + "1"
+        // expected "11" or 3
+
+        // TODO Test Case 4: "1111" + "1"
+        // expected "10000" or 32
+    }
+
+    /**
+     * Here we will test essentially the same things that you tested with base 10, except using the
+     * Assert.getBase2() method, feel free to write your own tests that you think should happen.
+     */
+    public static void testingBase2()
+    {
+        // TODO your own test cases.
     }
 
 }

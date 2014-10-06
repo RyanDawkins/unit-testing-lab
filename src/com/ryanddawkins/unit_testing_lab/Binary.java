@@ -41,14 +41,23 @@ public class Binary
     }
 
     /**
-     * Adds the binary string to the object
+     * Adds the binary string to the object, returns this reference
      * @param binaryString
      * @return
      */
     public Binary add(String binaryString)
     {
-        Binary operand = new Binary(binaryString);
-        this.number += operand.getBase10();
+        return add(new Binary(binaryString));
+    }
+
+    /**
+     * Chainable add method, returns reference to this
+     * @param binary
+     * @return this
+     */
+    public Binary add(Binary binary)
+    {
+        this.number = binary.getBase10();
         return this;
     }
 
